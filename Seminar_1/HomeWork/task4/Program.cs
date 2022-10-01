@@ -1,10 +1,13 @@
-﻿/* ПЕРВЫЙ ВАРИАНТ РЕШЕНИЯ
+﻿// Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+
+ //ПЕРВЫЙ ВАРИАНТ РЕШЕНИЯ
+/*
 Console.Clear();
 Console.Write("Введите первое число: ");
 int number1 = int.Parse(Console.ReadLine());
 Console.Write("Введите второе число: ");
 int number2 = int.Parse(Console.ReadLine());
-Console.Write("Введите второе число: ");
+Console.Write("Введите третье число: ");
 int number3 = int.Parse(Console.ReadLine());
 int max = number1;
 if (number2>max){
@@ -17,6 +20,7 @@ Console.WriteLine("Большее число: " + max);
 */
 
 
+// ВТОРОЙ ВАРИАНТ РЕШЕНИЯ
 // ВВОД ЧИСЕЛ В ОДНУ СТРОКУ И ИСПОЛЬЗОВАНИЕ МАССИВА
 // Очищаем консоль
 Console.Clear();
