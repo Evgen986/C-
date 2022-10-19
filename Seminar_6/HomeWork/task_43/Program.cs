@@ -8,35 +8,50 @@ Main();
 void Main()
 {
     Console.Clear();
-    double [] coord = GetlineСoordinates();
-    double [] cross = FindLineCrossing(coord);
-    PrintArray(cross);
+    double[] coord = GetlineСoordinates();
+    double[] cross = FindLineCrossing(coord);
+    if (cross[0] != 0.0 && cross[1] != 0.0)
+    {
+        PrintArray(cross);
+    }
 }
 
-double [] GetlineСoordinates()                     // Метод получения координат прямых от ползователя
+double[] GetlineСoordinates()                     // Метод получения координат прямых от ползователя
 {
-    double [] array = new double[4];
-    
+    double[] array = new double[4];
+
     Console.WriteLine("Введите координаты для двух прямых:");
     Console.Write("Введите значение b1: ");
     array[0] = double.Parse(Console.ReadLine());
-        
+
     Console.Write("Введите значение k1: ");
     array[1] = double.Parse(Console.ReadLine());
-        
+
     Console.Write("Введите значение b2: ");
     array[2] = double.Parse(Console.ReadLine());
-        
+
     Console.Write("Введите значение k2: ");
     array[3] = double.Parse(Console.ReadLine());
-        
+
     return array;
 }
 
-double [] FindLineCrossing (double [] arr){         // Метод нахождения координат точки пересечения 2-х прямых
-    double [] crossСoord = new double [2];
-    crossСoord[0] = (arr[2]-arr[0])/(arr[1]-arr[3]);
-    crossСoord[1] = arr[1]*(arr[2]-arr[0])/(arr[1]-arr[3])+arr[0];
+double[] FindLineCrossing(double[] arr)         // Метод нахождения координат точки пересечения 2-х прямых 
+{         
+    double[] crossСoord = new double[2];
+    if (arr[1] == arr[3] && arr[0] != arr[2])
+    {
+        Console.WriteLine("Прямые паралельны, точек пересечения нет!");
+    }
+    else if (arr[1] == arr[3] && arr[0] == arr[2])
+    {
+        Console.WriteLine("Прямые совпадают!");
+    }
+    else
+    {
+        crossСoord[0] = (arr[2] - arr[0]) / (arr[1] - arr[3]);
+        crossСoord[1] = arr[1] * (arr[2] - arr[0]) / (arr[1] - arr[3]) + arr[0];
+    }
     return crossСoord;
 }
 
