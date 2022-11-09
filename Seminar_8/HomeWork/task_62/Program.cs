@@ -5,14 +5,15 @@ Main();
 void Main()
 {
     Console.Clear();
-    int[,] array = new int[4, 4];
+    int[,] array = new int[9, 9];
     FillSpiralArray(array);
     PrintArray(array);
 }
 
 void FillSpiralArray(int[,] array)
 {
-    int count = 1;                                              // Счетчик для заполнения массива
+    int count = 10;                                             // Счетчик для заполнения массива - с 10 для равномерного вывода в консоли
+    int differenceToOne = count-1;                              // Переменная для вычисления заполненных ячеек массива
     // Заполняем периметр массива                                                        
     for (int i = 0; i < array.GetLength(1); i++)                // Двигаемся в право по первой строке
     {
@@ -38,8 +39,8 @@ void FillSpiralArray(int[,] array)
     int coordRows = 1;                  
     int coordColumns = 1;
     // Начинаем заполнять массив внутри периметра
-    while (count < array.GetLength(0) * array.GetLength(1))     // Цикл будет заполнять массив пока count-1 меньше чем количество ячеек масива
-    {
+    while (count-differenceToOne < array.GetLength(0) * array.GetLength(1))     // Цикл будет заполнять массив пока кол-во заполненных ячеек меньше 
+    {                                                                           // чем количество ячеек масива
         while (array[coordRows, coordColumns + 1] == 0)         // Пока в ячейке справа значение равно 0
         {
             array[coordRows, coordColumns] = count;
