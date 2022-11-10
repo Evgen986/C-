@@ -5,7 +5,7 @@ Main();
 void Main()
 {
     Console.Clear();
-    int[,] array = new int[9, 9];
+    int[,] array = new int[4, 4];
     FillSpiralArray(array);
     PrintArray(array);
 }
