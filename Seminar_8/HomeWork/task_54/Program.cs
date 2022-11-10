@@ -12,7 +12,6 @@ void Main()
     SortRowsElement(array);
     Console.WriteLine("Массив с отсортированными строками:");
     PrintArray(array);
-
 }
 
 void SortRowsElement(int[,] array)
